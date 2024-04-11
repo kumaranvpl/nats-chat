@@ -1,0 +1,14 @@
+# Write docker compose code to start nats.io docker container with websocket support specified in server.conf
+
+version: '3'
+
+services:
+  nats:
+    image: nats:latest
+    container_name: nats
+    ports:
+      - "4222:4222"
+      - "9222:9222"
+    volumes:
+      - ./server.conf:/etc/nats/server.conf
+    command: ["--config", "/etc/nats/server.conf"]
