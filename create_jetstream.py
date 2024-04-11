@@ -7,7 +7,8 @@ import multiprocessing
 import nats
 
 async def create_jetstream(loop):
-    nc = await nats.connect("nats://localhost:4222")
+    # nc = await nats.connect("nats://localhost:4222")
+    nc = await nats.connect("nats://nats:4222")
     js = nc.jetstream()
 
     # jsm = await js.stream_info("chat_test")

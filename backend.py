@@ -7,7 +7,8 @@ import multiprocessing
 
 async def run(loop, process_id):
     print(f"I am {process_id=}")
-    nc = await nats.connect("nats://localhost:4222")
+    # nc = await nats.connect("nats://localhost:4222")
+    nc = await nats.connect("nats://nats:4222")
     js = nc.jetstream()
     tracking_client_ids = []
 
